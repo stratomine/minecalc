@@ -1,0 +1,34 @@
+[
+    {
+        "pattern": [["vanilla.wood"]],
+        "creates": { "material": "vanilla.planks", "amount": 4 }
+    },
+    {
+        "pattern": [["vanilla.planks"],["vanilla.planks"]],
+        "creates": { "material": "vanilla.stick", "amount": 4 }
+    },
+    {
+        "pattern": [
+            ["vanilla.planks", "vanilla.planks", "vanilla.planks"],
+            [null, "vanilla.stick", null],
+            [null, "vanilla.stick", null]
+        ],
+        "creates": { "material": "vanilla.wooden-pickaxe", "amount": 1 }
+    },
+    {
+        "pattern": [
+            [null, "vanilla.planks", null],
+            [null, "vanilla.stick", null],
+            [null, "vanilla.stick", null]
+        ],
+        "creates": { "material": "vanilla.wooden-shovel", "amount": 1 }
+    },
+    {
+        "pattern": [
+            ["vanilla.planks", "vanilla.planks", null],
+            ["vanilla.planks", "vanilla.stick", null],
+            [null, "vanilla.stick", null]
+        ],
+        "creates": { "material": "vanilla.wooden-axe", "amount": 1 }
+    }
+]

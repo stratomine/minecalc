@@ -1,0 +1,31 @@
+{
+	"wood": {
+	    "name": "Wood",
+	    "tags": ["block", "wood"]
+	},
+	
+	"planks": {
+	    "name": "Wooden Planks",
+	    "tags": ["block", "wood"]
+	},
+	
+	"stick": {
+	    "name": "Stick",
+	    "tags": ["item", "component", "wood"]
+	},
+	
+	"wooden-pickaxe": {
+	    "name": "Wooden Pickaxe",
+	    "tags": ["item", "tool", "pickaxe", "wood"]
+	},
+	
+	"wooden-shovel": {
+	    "name": "Wooden Shovel",
+	    "tags": ["item", "tool", "shovel", "wood"]
+	},
+	
+	"wooden-axe": {
+	    "name": "Wooden Axe",
+	    "tags": ["item", "tool", "axe", "wood"]
+	}
+}
