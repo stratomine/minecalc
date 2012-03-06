@@ -1,29 +1,38 @@
 class Package
-  constructor: (@name) ->
-    @status =
+  constructor: (@_name) ->
+    @_status =
       materials: false
       recipes: false
   
   load: (callback) ->
-    @timeout = new Timeout 5000, =>
+    @_timeout = new Timeout 5000, =>
       callback("error", this)
-    url = "assets/packages/#{@name}"
+    url = "assets/packages/#{@name()}"
     _.each ["materials", "recipes"], (file) =>
       $.getJSON "#{url}/#{file}.json", (data) =>
-        @[file] = data
+        @["_#{file}"] = data
         @setLoaded(file)
         if @isLoaded()
-          @timeout.cancel()
+          @_timeout.cancel()
           callback("success", this)
   
   setLoaded: (file) ->
-    @status[file] = true
+    @_status[file] = true
   
   isLoaded: ->
-    (@status.materials is true) and (@status.recipes is true)
+    _.all @_status, ((value, key) -> value is true)
+  
+  name: ->
+    @_name
+  
+  materials: ->
+    @_materials
+  
+  recipes: ->
+    @_recipes
   
   materialCount: ->
-    _.size(@materials)
+    _.size(@materials()) if @isLoaded()
   
   recipeCount: ->
-    @recipes.length
+    @recipes().length if @isLoaded()
